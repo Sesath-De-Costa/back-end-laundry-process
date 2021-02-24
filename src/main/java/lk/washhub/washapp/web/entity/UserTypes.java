@@ -9,6 +9,6 @@ import javax.persistence.Embeddable;
  * file 'LICENSE.txt', which is part of this source code package.
  **/
 @Embeddable
-public enum UserType {
+public enum UserTypes {
     ADMIN, USER, DELIVERY_AGENT
 }
