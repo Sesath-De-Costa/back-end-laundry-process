@@ -19,6 +19,7 @@ import java.sql.Date;
 @Data
 @ToString
 public class RequestDTO implements Serializable {
+
     private int id;
     private String clientName;
     private String location; //----need to verify the type

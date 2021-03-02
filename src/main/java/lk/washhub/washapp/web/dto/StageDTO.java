@@ -1,8 +1,7 @@
 package lk.washhub.washapp.web.dto;
 
-import lk.washhub.washapp.web.entity.ProcessStages;
+import lk.washhub.washapp.web.entity.StageTypes;
 import lk.washhub.washapp.web.entity.ProcessStatus;
-import lk.washhub.washapp.web.entity.User;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -24,8 +23,9 @@ import java.util.List;
 public class StageDTO implements Serializable {
 
     private int id;
-    private User user;
-    private ProcessStages stageName;
+    private UserDTO user;
+    private StageTypes stageName;
     private List<ProcessStatus> processStatus;
+    private ProcessDTO processDTO;
 
 }
