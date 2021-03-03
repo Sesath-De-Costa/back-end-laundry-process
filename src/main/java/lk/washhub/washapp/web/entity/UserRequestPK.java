@@ -19,13 +19,9 @@ import java.sql.Date;
 @NoArgsConstructor
 @AllArgsConstructor
 @Embeddable
-public class RequestUserPK implements Serializable {
+public class UserRequestPK implements Serializable {
     @Column(name = "request_id")
     private int requsetId;
     @Column(name = "user_id")
     private int userID;
-    @Column(name = "assigned_time")
-    private Date assignedTime;
-    @Column(name = "completed_time")
-    private Date completedTime;
 }

@@ -18,12 +18,12 @@ import java.sql.Date;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "process_stage")
-public class ProcessStage implements SuperEntity{
+public class ProcessStage implements SuperEntity {
     @EmbeddedId
     private ProcessStagePK processStagePK;
-    @Column(name = "started_time")
+    @Column(name = "started_time", insertable = false, updatable = false)
     private Date startedTime;
-    @Column(name = "completed_time")
+    @Column(name = "completed_time", insertable = false, updatable = false)
     private Date completedTime;
     @ManyToOne
     private User user;

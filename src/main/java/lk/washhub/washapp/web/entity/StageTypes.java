@@ -10,6 +10,6 @@ import javax.persistence.Enumerated;
  * file 'LICENSE.txt', which is part of this source code package.
  **/
 @Embeddable
-public enum ProcessStages {
+public enum StageTypes {
     REQUESTED, CANCELED, PICKED, RECEIVED, WASHED, DRIED, IRONED, READY, ON_THE_WAY, COMPLETED
 }

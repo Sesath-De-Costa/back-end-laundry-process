@@ -27,7 +27,8 @@ public class User implements SuperEntity {
     private String lastName;
     private String nic;
     @Embedded
-    private UserType userType;
+    @Enumerated(EnumType.STRING)
+    private UserTypes userTypes;
     private String mobile;
 
 }

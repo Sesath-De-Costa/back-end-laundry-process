@@ -5,7 +5,6 @@ import lombok.Data;
 import lombok.NoArgsConstructor;
 
 import javax.persistence.*;
-import java.math.BigDecimal;
 import java.sql.Date;
 
 /**
@@ -34,8 +33,5 @@ public class Request implements SuperEntity {
     private Date pickedDate;
     @Column(name = "same_day_return")
     private boolean sameDayReturn;
-    private String username;
-
-//    need to know how to connect request with multiple processes(for different laundry types)
 
 }

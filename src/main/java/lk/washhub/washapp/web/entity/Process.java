@@ -7,7 +7,6 @@ import lombok.NoArgsConstructor;
 import javax.persistence.*;
 import java.math.BigDecimal;
 import java.sql.Date;
-import java.util.List;
 
 /**
  * Created by Sesath De Costa on 2021-02-24
@@ -20,7 +19,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Table(name = "process")
-public class Process implements SuperEntity{
+public class Process implements SuperEntity {
     @Id
     @GeneratedValue
     private int id;
@@ -30,6 +29,10 @@ public class Process implements SuperEntity{
     private BigDecimal weight;
     private BigDecimal price;
     private String qr; // need to verify the type of QR
-    private Date time;
+    @Column(name = "started_time")
+    private Date startedTime;
+    @ManyToOne
+    @JoinColumn(name = "request_id", referencedColumnName = "id")
+    private Request request;
 
 }

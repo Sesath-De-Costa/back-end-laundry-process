@@ -1,6 +1,7 @@
 package lk.washhub.washapp.web.entity;
 
 import javax.persistence.Embeddable;
+import javax.persistence.Enumerated;
 
 /**
  * Created by Sesath De Costa on 2021-02-24
@@ -9,6 +10,7 @@ import javax.persistence.Embeddable;
  * file 'LICENSE.txt', which is part of this source code package.
  **/
 @Embeddable
+
 public enum UserTypes {
     ADMIN, USER, DELIVERY_AGENT
 }

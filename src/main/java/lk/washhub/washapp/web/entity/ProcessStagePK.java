@@ -24,9 +24,5 @@ public class ProcessStagePK implements Serializable {
     private int processId;
     @Column(name = "stage_id")
     private int stageID;
-    @Column(name = "started_time")
-    private Date startedTime;
-    @Column(name = "completed_time")
-    private Date completedTime;
 
 }
