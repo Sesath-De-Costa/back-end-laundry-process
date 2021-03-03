@@ -11,15 +11,16 @@ import java.util.List;
  * This file is subject to the terms and conditions defined in
  * file 'LICENSE.txt', which is part of this source code package.
  **/
+
 public interface UserBO extends SuperBO {
-    
+
     void saveUser(UserDTO userDTO) throws Exception;
 
     void updateUser(UserDTO userDTO) throws Exception;
 
-    void deleteUser(UserDTO userDTO) throws Exception;
+    void deleteUser(int key) throws Exception;
 
-    UserDTO getUser(UserDTO userDTO) throws Exception;
+    UserDTO getUser(int key) throws Exception;
 
     List<UserDTO> getAllUser() throws Exception;
 }

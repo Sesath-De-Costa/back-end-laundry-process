@@ -17,9 +17,9 @@ public interface StageBO extends SuperBO {
 
     void updateStage(StageDTO stageDTO) throws Exception;
 
-    void deleteStage(StageDTO stageDTO) throws Exception;
+    void deleteStage(int key) throws Exception;
 
-    StageDTO getStage(StageDTO stageDTO) throws Exception;
+    StageDTO getStage(int key) throws Exception;
 
     List<StageDTO> getAllStage() throws Exception;
 }
