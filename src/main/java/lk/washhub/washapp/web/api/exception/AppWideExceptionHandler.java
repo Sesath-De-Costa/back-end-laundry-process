@@ -16,12 +16,18 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 
 @RestControllerAdvice
 public class AppWideExceptionHandler {
-    Logger  logger = LoggerFactory.getLogger(AppWideExceptionHandler.class);
+    Logger logger = LoggerFactory.getLogger(AppWideExceptionHandler.class);
 
     @ResponseStatus(HttpStatus.INTERNAL_SERVER_ERROR)
     @ExceptionHandler(Throwable.class)
-    public String globalExceptionHandler(Throwable t){
+    public String globalExceptionHandler(Throwable t) {
         logger.error(null, t);
         return "Something went wrong";
     }
+
+//    @ResponseStatus(HttpStatus.UNAUTHORIZED)
+//    @ExceptionHandler(Throwable.class)
+//    public String invalidCredentials(Throwable t) {
+//        return "Invalid Credentials";
+//    }
 }

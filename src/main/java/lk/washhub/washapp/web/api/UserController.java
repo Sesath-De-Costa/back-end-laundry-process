@@ -2,11 +2,13 @@ package lk.washhub.washapp.web.api;
 
 import lk.washhub.washapp.web.business.custom.UserBO;
 import lk.washhub.washapp.web.dto.UserDTO;
+import lombok.SneakyThrows;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.MediaType;
 import org.springframework.web.bind.annotation.*;
 
+import javax.security.auth.login.LoginException;
 import java.util.List;
 
 /**
@@ -23,6 +25,17 @@ public class UserController {
 
     @Autowired
     private UserBO userBO;
+
+    @SneakyThrows
+    @ResponseStatus(HttpStatus.OK)
+    @PostMapping(value = "/authenticate", consumes = MediaType.APPLICATION_JSON_VALUE)
+    public String authenticateUser(@RequestBody UserDTO userDTO) throws LoginException {
+        if (userBO.authenticate(userDTO) != null) {
+            return userBO.authenticate(userDTO);
+        } else {
+            return null; //-------------------------------------------Correct here
+        }
+    }
 
     @GetMapping("/all")
     public List<UserDTO> getAllUsers() throws Exception {

@@ -28,7 +28,7 @@ public class ProcessController {
         return processBO.getAllProcess();
     }
 
-    @GetMapping("/{id:\\d{5}}")
+    @GetMapping("/{id:\\d}")
     public ProcessDTO getProcess(@PathVariable int id) throws Exception {
         return processBO.getProcess(id);
     }
@@ -41,14 +41,14 @@ public class ProcessController {
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @PutMapping(value = "/{id:\\d{5}}", consumes = MediaType.APPLICATION_JSON_VALUE)
+    @PutMapping(value = "/{id:\\d}", consumes = MediaType.APPLICATION_JSON_VALUE)
     public void updateProcess(@PathVariable int id, @RequestBody ProcessDTO processDTO) throws Exception {
         processDTO.setId(id);
         processBO.updateProcess(processDTO);
     }
 
     @ResponseStatus(HttpStatus.NO_CONTENT)
-    @DeleteMapping("/{id:\\d{5}}")
+    @DeleteMapping("/{id:\\d}")
     public void deleteProcess(@PathVariable int id) throws Exception {
         processBO.deleteProcess(id);
     }

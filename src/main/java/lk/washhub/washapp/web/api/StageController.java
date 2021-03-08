@@ -19,7 +19,6 @@ import java.util.List;
 @CrossOrigin
 @RequestMapping("/api/v1/stages")
 public class StageController {
-
     @Autowired
     private StageBO stageBO;
 
