@@ -29,21 +29,21 @@ public class RequestBOImpl implements RequestBO {
 
     @Override
     public void saveRequest(RequestDTO requestDTO) throws Exception {
-
+        requestDAO.save(mapper.getRequest(requestDTO));
     }
 
     @Override
     public void updateRequest(RequestDTO requestDTO) throws Exception {
-
+        requestDAO.save(mapper.getRequest(requestDTO));
     }
 
     @Override
     public RequestDTO getRequest(int key) throws Exception {
-        return null;
+        return mapper.getRequestDTO(requestDAO.getOne(key));
     }
 
     @Override
     public List<RequestDTO> getAllRequest() throws Exception {
-        return null;
+        return mapper.getAllRequestDTO(requestDAO.findAll());
     }
 }

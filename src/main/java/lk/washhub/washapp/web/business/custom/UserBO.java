@@ -23,4 +23,6 @@ public interface UserBO extends SuperBO {
     UserDTO getUser(int key) throws Exception;
 
     List<UserDTO> getAllUser() throws Exception;
+
+    String authenticate(UserDTO userDTO)throws Exception;
 }
