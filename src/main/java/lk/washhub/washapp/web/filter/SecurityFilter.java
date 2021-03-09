@@ -39,10 +39,12 @@ public class SecurityFilter extends HttpFilter {
         } else if (request.getServletPath().equals("/api/v1/users") && request.getMethod().equals("GET")
                 && request.getPathInfo() != null) {
             chain.doFilter(request, response);
-//        } else if (request.getServletPath().equals("/api/v1/requests") && request.getMethod().equals("POST")
+        }
+//        else if (request.getServletPath().equals("/api/v1/requests") && request.getMethod().equals("POST")
 //                && request.getPathInfo() != null) {
 //            chain.doFilter(request, response);
-//        } else {
+//        }
+        else {
             String authorization = request.getHeader("Authorization");
             if (authorization == null || !authorization.startsWith("Bearer")) {
                 response.setStatus(HttpServletResponse.SC_UNAUTHORIZED);
